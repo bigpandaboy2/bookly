@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# Dockers
+docker-compose.override.yml
+
 # Virtual environments
 venv/
 .env/

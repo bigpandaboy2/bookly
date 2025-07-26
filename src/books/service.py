@@ -2,7 +2,6 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from src.books.schemas import BookCreateModel, BookUpdateModel
 from sqlmodel import select, desc
 from .models import Book
-from datetime import datetime
 
 class BookService:
     async def get_all_books(self, session: AsyncSession):
@@ -18,9 +17,6 @@ class BookService:
     async def create_book(self, book_data: BookCreateModel, session: AsyncSession):
         book_data_dict = book_data.model_dump()
         new_book = Book(**book_data_dict)
-        new_book.published_date = datetime.strptime(
-            book_data_dict['published_date'], '%Y-%m-%d'
-        )
         session.add(new_book)
         await session.commit()
         await session.refresh(new_book)  
