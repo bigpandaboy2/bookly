@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 # Dockers
-docker-compose.override.yml
+docker-compose.yml
 
 # Virtual environments
 venv/
