@@ -6,8 +6,7 @@ from src.config import Config
 from collections.abc import AsyncGenerator
 
 async_engine = create_async_engine(
-    Config.DATABASE_URL,
-    echo=True
+    Config.DATABASE_URL
 )
 
 async def init_db():
